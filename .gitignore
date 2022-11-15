@@ -1,0 +1,7 @@
+.vscode
+venv
+
+*.lprof
+**/*.py[cdo]
+
+**/__pycache__
