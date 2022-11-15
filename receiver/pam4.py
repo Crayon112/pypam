@@ -13,6 +13,7 @@
 import math
 import numpy as np
 from typing import Tuple
+from numba import jit
 
 
 DEFAULT_SAMPLE_NUMBER = 2000
@@ -116,6 +117,32 @@ def summary(out_symbols: np.ndarray, train_symbols: np.ndarray):
     return error_summary
 
 
+@jit(nopython=True)
+def update_hxx(
+    hxx: np.ndarray,
+    tap_signal: np.ndarray,
+    in_signal: np.ndarray,
+    power_signal: np.ndarray,
+    init_id: int = 0,
+    piece: int = DEFAULT_PIECE,
+    step: float = DEFAULT_STEP,
+):
+    slice_ = len(in_signal) // piece * piece
+
+    out_signal = np.array([0.0] * slice_)
+    tap_signal[init_id] = in_signal[0]
+    for idx in range(0, slice_, piece):
+        for piece_id in range(piece):
+            cur_id = idx + piece_id
+            out_signal[cur_id] = tap_signal.dot(hxx)
+            if cur_id % 2 == 1:
+                update_value = power_signal[cur_id // 2] - out_signal[cur_id]
+                hxx += step * update_value * tap_signal
+            tap_signal[1:] = tap_signal[:-1]
+            tap_signal[init_id] = in_signal[cur_id + 1]
+    return hxx, tap_signal, out_signal
+
+
 class PAM4Receiver(object):
 
     def __init__(self, in_signal: np.ndarray) -> None:
@@ -147,9 +174,6 @@ class PAM4Receiver(object):
 
         # 主逻辑
         init_id = 0
-        slice_ = len(in_signal) // piece * piece
-
-        zeros = np.array([0.0] * slice_)
         tap_signal = np.array([0.0] * tap)
 
         delay_ = math.ceil((tap - 1) / 4)
@@ -159,17 +183,10 @@ class PAM4Receiver(object):
         ], axis=0)
 
         for _ in range(tap - 1):
-            out_signal = zeros.copy()
-            tap_signal[init_id] = in_signal[0]
-            for idx in range(0, slice_, piece):
-                for piece_id in range(piece):
-                    cur_id = idx + piece_id
-                    out_signal[cur_id] = tap_signal.dot(hxx)
-                    if cur_id % 2 == 1:
-                        update_value = power_signal[cur_id // 2] - out_signal[cur_id]
-                        hxx += step * update_value * tap_signal
-                    tap_signal[1:] = tap_signal[:-1]
-                    tap_signal[init_id] = in_signal[cur_id + 1]
+            hxx, tap_signal, out_signal = update_hxx(
+                hxx, tap_signal, in_signal, power_signal,
+                init_id=init_id, piece=piece, step=step,
+            )
         return hxx, out_signal
 
     def _init_hxx(self,  hxx: np.ndarray = None, tap: int = None):
