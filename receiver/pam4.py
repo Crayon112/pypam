@@ -13,7 +13,6 @@
 import math
 import numpy as np
 from typing import Tuple
-# from numba import jit
 
 
 DEFAULT_SAMPLE_NUMBER = 2000
@@ -25,8 +24,6 @@ DEFAULT_TAP = 31
 DEFAULT_STEP = 0.0005
 
 DEFAULT_PIECE = 500
-
-DEFAULT_ROUND = 30
 
 
 def symbol2stream(symbols: np.ndarray) -> np.ndarray:
@@ -64,7 +61,6 @@ def _shift_decison_signal(
     ], axis=0)
 
 
-# @jit(nopython=True)
 def power2symbol(
     power_signal: np.ndarray,
     train_symbols: np.ndarray,
@@ -83,7 +79,6 @@ def power2symbol(
     return _shift_decison_signal(decision_signal, train_symbols, n_sample)
 
 
-# @jit(nopython=True)
 def summary(out_symbols: np.ndarray, train_symbols: np.ndarray):
     """输出符号与训练符号之间结果比较."""
     train_symbols = train_symbols[:len(out_symbols)]
@@ -134,7 +129,6 @@ class PAM4Receiver(object):
         self.in_signal = in_signal
         self.out_signal = None
 
-    # @jit(nopython=True)
     def equalize(
         self,
         in_signal: np.ndarray,
@@ -165,7 +159,6 @@ class PAM4Receiver(object):
         ], axis=0)
 
         for _ in range(tap - 1):
-            print(f"Tap {_}")
             out_signal = zeros.copy()
             tap_signal[init_id] = in_signal[0]
             for idx in range(0, slice_, piece):
@@ -195,7 +188,6 @@ class PAM4Receiver(object):
         self,
         train_symbols: np.ndarray,
         hxx: np.ndarray = None,
-        round: int = None,
         delay: int = None,
         tap: int = None,
         piece: int = None,
@@ -206,7 +198,6 @@ class PAM4Receiver(object):
         ======
         train_symbols {np.ndarray}: 训练序列，需要预处理为 [-3, 3] 区间内
         h_xx {np.ndarray}: 传递函数
-        round {int}: 均衡过程进行多少轮
         delay {int}: 输入信号的初始频移
         tap {int}: 抽头系数
         piece {int}: 在均衡过程中的窗口包含的样本数
@@ -217,17 +208,14 @@ class PAM4Receiver(object):
         {dict}: 接收机的误码率以及各项指标
 
         """
-        if round is None:
-            round = DEFAULT_ROUND
 
         hxx = self._init_hxx(hxx, tap)
-        for _ in range(round):
-            print(f"Main Round {_}")
-            hxx, power_signal = self.equalize(
-                self.in_signal, train_symbols,
-                hxx, delay=delay, tap=tap,
-                piece=piece, step=step,
-            )
+
+        hxx, power_signal = self.equalize(
+            self.in_signal, train_symbols,
+            hxx, delay=delay, tap=tap,
+            piece=piece, step=step,
+        )
 
         self.out_signal = power_signal[1::2]
         out_symbols = power2symbol(self.out_signal, train_symbols)

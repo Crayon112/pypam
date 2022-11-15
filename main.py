@@ -12,5 +12,5 @@ from receiver.pam4 import PAM4Receiver
 
 if __name__ == '__main__':
     receiver = PAM4Receiver(in_signal)
-    summary = receiver.run(train_symbols, round=1)
+    summary = receiver.run(train_symbols)
     print(summary["BER"])
