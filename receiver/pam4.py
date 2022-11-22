@@ -146,7 +146,7 @@ def update_hxx(
 class PAM4Receiver(object):
 
     def __init__(self, in_signal: np.ndarray) -> None:
-        """接受信号为模拟信号.
+        """接受信号为电模拟信号.
 
         Notes
         =====

@@ -128,16 +128,6 @@
 <SETTING __key="settings" state="FWMDistortions" value="On"/>
 <SETTING __key="settings" state="GenericDistortions" value="On"/>
 <SETTING __key="settings" state="StokesVector" value="Off"/></INSTANCE>
-<INSTANCE __key="instances" instanceId="ViText_vtms2" master="URN:VPI_LIB::TC Modules\Analyzers\ViText.vtms:" resVersion="" showInstanceId="false">
-<GEOMETRY __key="geom" x="142.0" y="36.0"/>
-<SETTING __key="settings" state="Title" value=""/>
-<SETTING __key="settings" state="Geometry" value=""/>
-<SETTING __key="settings" state="Options" value=""/>
-<SETTING __key="settings" state="DecimalPlaces" value="-1"/>
-<SETTING __key="settings" state="OutputFilename" value="E:\source\PAM4\RX_X.csv"/>
-<SETTING __key="settings" state="Overwrite" value="OVERWRITE"/>
-<SETTING __key="settings" state="DisplayWindow" value="Off"/>
-<SETTING __key="settings" state="Active" value="On"/></INSTANCE>
 <INSTANCE __key="instances" instanceId="PMD_Emulator_vtms1" master="URN:VPI_LIB::TC Modules\Polarization Components\PMD_Emulator.vtms:" resVersion="" showInstanceId="false">
 <GEOMETRY __key="geom" x="69.0" y="36.0"/>
 <SETTING __key="settings" state="ReferenceFrequency" unit="Hz" value="193.1e12"/>
@@ -251,24 +241,6 @@
 <INSTANCE __key="instances" instanceId="UnpackBlockEl_vtms3" master="URN:VPI_LIB::TC Modules\Signal Conversion\UnpackBlockEl.vtms:" resVersion="" showInstanceId="false">
 <GEOMETRY __key="geom" x="126.0" y="36.0"/>
 <SETTING __key="settings" state="SampleRate" unit="Hz" value="SampleRateDefault"/></INSTANCE>
-<INSTANCE __key="instances" instanceId="PAM4_TX_lnk1" master="URN:CHILD::PAM4_TX.vtmg:" resVersion="" showInstanceId="false">
-<GEOMETRY __key="geom" x="26.0" y="36.0"/>
-<SETTING __key="settings" state="factor" value="16"/>
-<SETTING __key="settings" state="OutputFilenamex1" value="D:\SP-PAM4-DD\X111.csv"/>
-<SETTING __key="settings" state="OutputFilenamex2" value="D:\SP-PAM4-DD\X112.csv"/>
-<SETTING __key="settings" showOnSchematic="true" state="RIN" unit="dB/Hz" value="-160"/>
-<SETTING __key="settings" showOnSchematic="true" state="LF_Active" value="On"/>
-<SETTING __key="settings" showOnSchematic="true" state="Bandwidth" unit="Hz" value="35e9"/>
-<SETTING __key="settings" state="FilterOrder" value="4"/>
-<SETTING __key="settings" state="RandomNumberSeed1" value="1"/>
-<SETTING __key="settings" state="RandomNumberSeed2" value="2000"/>
-<SETTING __key="settings" state="DriveAmplitude" unit="A, V" value="1"/>
-<SETTING __key="settings" state="Bias" unit="A, V" value="0.5"/>
-<SETTING __key="settings" showOnSchematic="true" state="CenterFrequency" unit="Hz" value="193.1e12"/>
-<SETTING __key="settings" showOnSchematic="true" state="AveragePower" unit="W" value="6.31e-3"/>
-<SETTING __key="settings" state="Linewidth" unit="Hz" value="Linewidth"/>
-<SETTING __key="settings" showOnSchematic="true" state="Ellipticity" unit="deg" value="0"/>
-<SETTING __key="settings" showOnSchematic="true" state="Azimuth" unit="deg" value="0"/></INSTANCE>
 <INSTANCE __key="instances" instanceId="AmpSysOpt_vtms1" master="URN:VPI_LIB::TC Modules\Optical Amplifiers\AmpSysOpt.vtms:" resVersion="7.5" showInstanceId="false">
 <GEOMETRY __key="geom" x="43.0" y="36.0"/>
 <SETTING __key="settings" state="AmplifierType" value="PowerControlled"/>
@@ -346,6 +318,34 @@
 <GEOMETRY __key="geom" x="78.0" y="36.0"/>
 <SETTING __key="settings" showOnSchematic="true" state="Attenuation" unit="dB" value="3.75"/>
 <SETTING __key="settings" state="Active" value="On"/></INSTANCE>
+<INSTANCE __key="instances" instanceId="ViText_vtms2" master="URN:VPI_LIB::TC Modules\Analyzers\ViText.vtms:" resVersion="" showInstanceId="false">
+<GEOMETRY __key="geom" x="142.0" y="36.0"/>
+<SETTING __key="settings" state="Title" value=""/>
+<SETTING __key="settings" state="Geometry" value=""/>
+<SETTING __key="settings" state="Options" value=""/>
+<SETTING __key="settings" state="DecimalPlaces" value="-1"/>
+<SETTING __key="settings" state="OutputFilename" value="E:\source\pypam\out\RX_X.csv"/>
+<SETTING __key="settings" state="Overwrite" value="OVERWRITE"/>
+<SETTING __key="settings" state="DisplayWindow" value="Off"/>
+<SETTING __key="settings" state="Active" value="On"/></INSTANCE>
+<INSTANCE __key="instances" instanceId="PAM4_TX_lnk1" master="URN:CHILD::PAM4_TX.vtmg:" resVersion="" showInstanceId="false">
+<GEOMETRY __key="geom" x="26.0" y="36.0"/>
+<SETTING __key="settings" state="factor" value="16"/>
+<SETTING __key="settings" state="OutputFilenamex1" value="D:\SP-PAM4-DD\X111.csv"/>
+<SETTING __key="settings" state="OutputFilenamex2" value="D:\SP-PAM4-DD\X112.csv"/>
+<SETTING __key="settings" showOnSchematic="true" state="RIN" unit="dB/Hz" value="-160"/>
+<SETTING __key="settings" showOnSchematic="true" state="LF_Active" value="On"/>
+<SETTING __key="settings" showOnSchematic="true" state="Bandwidth" unit="Hz" value="35e9"/>
+<SETTING __key="settings" state="FilterOrder" value="4"/>
+<SETTING __key="settings" state="RandomNumberSeed1" value="1"/>
+<SETTING __key="settings" state="RandomNumberSeed2" value="2000"/>
+<SETTING __key="settings" state="DriveAmplitude" unit="A, V" value="1"/>
+<SETTING __key="settings" state="Bias" unit="A, V" value="0.5"/>
+<SETTING __key="settings" showOnSchematic="true" state="CenterFrequency" unit="Hz" value="193.1e12"/>
+<SETTING __key="settings" showOnSchematic="true" state="AveragePower" unit="W" value="6.31e-3"/>
+<SETTING __key="settings" state="Linewidth" unit="Hz" value="Linewidth"/>
+<SETTING __key="settings" showOnSchematic="true" state="Ellipticity" unit="deg" value="0"/>
+<SETTING __key="settings" showOnSchematic="true" state="Azimuth" unit="deg" value="0"/></INSTANCE>
 <properties __key="properties"/>
 <LINK __key="links" inst1="FilterEl_vtms3" inst2="UnpackBlockEl_vtms3" points="120.0, 36.0, 123.0, 36.0" port1="output" port2="input" term1="0" term2="0" width="1"/>
 <LINK __key="links" inst1="DownSample_vtms1" inst2="UnpackBlockEl_vtms3" points="132.0, 36.0, 129.0, 36.0" port1="input" port2="sample" term1="0" term2="0" width="1"/>
@@ -357,22 +357,22 @@
 <LINK __key="links" inst1="PMD_Emulator_vtms1" inst2="Attenuator_vtms1" points="72.0, 36.0, 75.0, 36.0" port1="output" port2="input" term1="0" term2="0" width="1"/>
 <LINK __key="links" inst1="Photodiode_vtms1" inst2="FilterEl_vtms3" points="100.0, 36.0, 114.0, 36.0" port1="output" port2="input" term1="0" term2="0" width="1"/>
 <LINK __key="links" inst1="Attenuator_vtms1" inst2="Photodiode_vtms1" points="81.0, 36.0, 94.0, 36.0" port1="output" port2="input" term1="0" term2="0" width="1"/>
-<LINK __key="links" inst1="AmpSysOpt_vtms1" inst2="PAM4_TX_lnk1" points="40.0, 36.0, 29.0, 36.0" port1="input" port2="output_vtmy1" term1="0" term2="0" width="1"/>
-<LINK __key="links" inst1="SignalAnalyzer_vtms1" inst2="PAM4_TX_lnk1" points="43.0, 47.0, 29.0, 47.0, 29.0, 36.0" port1="input" port2="output_vtmy1" term1="0" term2="0" width="1"/>
 <LINK __key="links" inst1="111" inst2="AmpSysOpt_vtms1" points="47.0, 28.0, 47.0, 36.0, 46.0, 36.0" port1="input" port2="output" term1="0" term2="0" width="1"/>
 <LINK __key="links" inst1="ViPowermeter_vtmg1" inst2="Attenuator_vtms1" points="88.0, 27.0, 88.0, 36.0, 81.0, 36.0" port1="input" port2="output" term1="0" term2="0" width="1"/>
+<LINK __key="links" inst1="AmpSysOpt_vtms1" inst2="PAM4_TX_lnk1" points="40.0, 36.0, 29.0, 36.0" port1="input" port2="output_vtmy1" term1="0" term2="0" width="1"/>
+<LINK __key="links" inst1="SignalAnalyzer_vtms1" inst2="PAM4_TX_lnk1" points="43.0, 47.0, 29.0, 47.0, 29.0, 36.0" port1="input" port2="output_vtmy1" term1="0" term2="0" width="1"/>
 <TEXTBOX __key="texts" font="sansserif" fontsize="1.8" height="2.7083333" horizjust="left" instanceId="caption_PMD_Emulator_vtms1" text="DGD = 8e-12 s" textcol="black" vertjust="center" width="15.208333">
 <GEOMETRY __key="geom" x="72.4375" y="39.80625"/></TEXTBOX>
 <TEXTBOX __key="texts" font="sansserif" fontsize="1.8" height="3.1999998" horizjust="left" text="SP-PAM4 TX1" textcol="red" vertjust="center" width="13.2">
 <GEOMETRY __key="geom" x="26.599998" y="29.650002"/></TEXTBOX>
-<TEXTBOX __key="texts" font="sansserif" fontsize="1.8" height="3.0357144" horizjust="left" instanceId="caption_Attenuator_vtms1" text="Attenuation = 10 dB" textcol="black" vertjust="center" width="21.428572">
+<TEXTBOX __key="texts" font="sansserif" fontsize="1.8" height="2.7083333" horizjust="left" instanceId="caption_Attenuator_vtms1" text="Attenuation = 3.75 dB" textcol="black" vertjust="center" width="21.458332">
 <GEOMETRY __key="geom" x="84.97222" y="41.275"/></TEXTBOX>
 <TEXTBOX __key="texts" font="sansserif" fontsize="3.0" height="5.0" horizjust="left" text="SP-PAM4-DD system" textcol="red" vertjust="center" width="54.0">
 <GEOMETRY __key="geom" x="73.6" y="9.15"/></TEXTBOX>
-<TEXTBOX __key="texts" font="sansserif" fontsize="0.8" height="6.9791665" horizjust="left" instanceId="caption_PAM4_TX_lnk1" text="RIN = -160 dB/Hz\nLF_Active = On \nBandwidth = 35e9 Hz\nCenterFrequency = 193.1e12 Hz\nAveragePower = 6.31e-3 W\nEllipticity = 0 deg\nAzimuth = 0 deg" textcol="black" vertjust="center" width="14.583333">
-<GEOMETRY __key="geom" x="31.232143" y="42.025"/></TEXTBOX>
 <TEXTBOX __key="texts" bordercol="black" boxcol="white" font="dialog" fontsize="1.8" height="20.0" horizjust="left" instanceId="schematic_parameters" text="SCHEMATIC PARAMETERS:\nRX_Bandwidth = 35e9 Hz\nRandomNumberSeed = 8 \ndownSample = 8 \nTimeWindow = 32768/BitRateDefault s\nBitRateDefault = 56e9 bit/s\nSampleRateDefault = 16*BitRateDefault Hz\nFiberLength = 10e3 m\nDispersion = 17e-6 s/m^2\nPMDCoefficient = 0.1e-12/31.62 s/sqrt(m)\nLinewidth = 5e6 Hz\nLO_offset = 0e9 Hz\n" textcol="black" vertjust="center" width="36.25">
 <GEOMETRY __key="geom" x="23.0" y="15.0"/></TEXTBOX>
+<TEXTBOX __key="texts" font="sansserif" fontsize="0.8" height="7.1875" horizjust="left" instanceId="caption_PAM4_TX_lnk1" text="RIN = -160 dB/Hz\nLF_Active = On \nBandwidth = 35e9 Hz\nCenterFrequency = 193.1e12 Hz\nAveragePower = 6.31e-3 W\nEllipticity = 0 deg\nAzimuth = 0 deg" textcol="black" vertjust="center" width="13.75">
+<GEOMETRY __key="geom" x="30.875" y="42.11875"/></TEXTBOX>
 <GRAPHDEF __key="graphics"/></TOPOLOGY></CONTENTS></ENCRYPTION>
 <ICONDEF __key="icon" bounds="-2.0, -2.0, 2.0, 2.0">
 <body __key="body">

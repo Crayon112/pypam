@@ -1,5 +1,7 @@
 import os
 import numpy as np
+import sys
+sys.path.append(".")
 from utils import parse
 
 __all__ = ["in_signal", "train_symbols", "symbol_pattern"]

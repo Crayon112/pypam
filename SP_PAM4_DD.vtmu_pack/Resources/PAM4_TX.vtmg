@@ -134,7 +134,7 @@
 <SETTING __key="settings" showOnSchematic="true" state="Active" value="{LF_Active}"/></INSTANCE>
 <INSTANCE __key="instances" instanceId="ReadFile_vtms1" master="URN:VPI_LIB::TC Modules\Signal Processing\Signal Sources\Read Signal from File or Memory\ReadFile.vtms:" resVersion="" showInstanceId="false">
 <GEOMETRY __key="geom" x="26.0" y="19.0"/>
-<SETTING __key="settings" showOnSchematic="true" state="fileName" value="E:\source\PAM4\PAM4.csv"/>
+<SETTING __key="settings" showOnSchematic="true" state="fileName" value="E:\source\pypam\out\pam4.csv"/>
 <SETTING __key="settings" state="haltAtEnd" value="NO"/>
 <SETTING __key="settings" state="periodic" value="YES"/></INSTANCE>
 <properties __key="properties"/>
@@ -153,8 +153,8 @@
 <GEOMETRY __key="geom" x="67.75" y="22.25"/></TEXTBOX>
 <TEXTBOX __key="texts" font="sansserif" fontsize="3.0" height="5.0" horizjust="left" text="SP-PAM4 TX" textcol="red" vertjust="center" width="54.0">
 <GEOMETRY __key="geom" x="86.6" y="8.15"/></TEXTBOX>
-<TEXTBOX __key="texts" font="sansserif" fontsize="0.8" height="1.3636364" horizjust="left" instanceId="caption_ReadFile_vtms1" text="fileName = F:\\source\\100G-PAM4-DD\\PAM4.csv" textcol="black" vertjust="center" width="15.681818">
-<GEOMETRY __key="geom" x="31.23485" y="22.400002"/></TEXTBOX>
+<TEXTBOX __key="texts" font="sansserif" fontsize="0.8" height="1.4166666" horizjust="left" instanceId="caption_ReadFile_vtms1" text="fileName = E:\\source\\PAM4\\PAM4.csv" textcol="black" vertjust="center" width="19.833334">
+<GEOMETRY __key="geom" x="32.359848" y="22.400002"/></TEXTBOX>
 <GRAPHDEF __key="graphics"/></TOPOLOGY></CONTENTS></ENCRYPTION>
 <ICONDEF __key="icon" bounds="-2.0, -2.0, 3.0200000476837157, 2.0">
 <body __key="body">
