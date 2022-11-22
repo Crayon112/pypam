@@ -5,7 +5,7 @@ from data import in_signal, train_symbols
 from receiver.pam4 import PAM4Receiver
 
 
-# __choice__ = "T"  # T/R
+__choice__ = "T"  # T/R
 __choice__ = "R"  # T/R
 
 
